@@ -7,7 +7,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .container {
@@ -16,7 +16,9 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   max-width: 600px;
-  width: 100%;
+  width: 90%;
+  margin: 20px;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -32,13 +34,15 @@ form {
 
 textarea {
   width: 100%;
-  height: 100px;
+  height: 80px; /* Limit the height to ensure it doesn't overflow */
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-bottom: 10px;
-  resize: none;
+  resize: vertical; /* Allow resizing, but only vertically */
   font-size: 16px;
+  box-sizing: border-box;
+  max-height: 200px; /* Set a maximum height for resizing */
 }
 
 button {
