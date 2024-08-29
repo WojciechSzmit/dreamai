@@ -2,6 +2,6 @@ const express = require('express');
 const { getModelPrediction } = require('../controllers/modelController');
 const router = express.Router();
 
-router.post('/predict', getModelPrediction);
+router.post('/completion', getModelPrediction);
 
 module.exports = router;
