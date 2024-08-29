@@ -4,13 +4,17 @@ import './App.css'; // Import the CSS file
 
 function App() {
   const [prompt, setPrompt] = useState('');
+  const [enableSafetyChecker, setEnableSafetyChecker] = useState(false);
   const [response, setResponse] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:5000/api/completion', { prompt });
+      const res = await axios.post('http://localhost:5000/api/completion', {
+        prompt,
+        enable_safety_checker: enableSafetyChecker,
+      });
       setResponse(res.data); // Store the response object
     } catch (error) {
       console.error('Error fetching completion', error);
@@ -19,14 +23,22 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Dream machnine</h1>
+      <h1>Completion Generator</h1>
       <form onSubmit={handleSubmit}>
         <textarea
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
-          placeholder="Enter your dream here"
+          placeholder="Enter your prompt here"
         />
-        <button type="submit">Start dreaming</button>
+        <label>
+          <input
+            type="checkbox"
+            checked={enableSafetyChecker}
+            onChange={(e) => setEnableSafetyChecker(e.target.checked)}
+          />
+          Enable Safety Checker
+        </label>
+        <button type="submit">Generate</button>
       </form>
       <div className="response-container">
         <h2>Response:</h2>
