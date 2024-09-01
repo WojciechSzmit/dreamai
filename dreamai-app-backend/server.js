@@ -2,7 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const modelRoutes = require('./routes/modelRoutes');
 const cors = require('cors');
-//const path = require('path');
+const path = require('path');
 
 
 
@@ -19,6 +19,11 @@ app.use(express.json());
 app.use('/api', modelRoutes);
 
 
+app.use(express.static(path.join(__dirname, 'dreamai-app-frontend/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dreamai-app-frontend/build', 'index.js'));
+});
 
 
 app.listen(PORT, () => {
