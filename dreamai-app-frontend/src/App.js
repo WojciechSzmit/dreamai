@@ -12,7 +12,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const res = await axios.post('https://dreamai-79vb.onrender.com/', {
+      const res = await axios.post('https://dreamai-79vb.onrender.com/api/completion', {
         prompt,
         enable_safety_checker: enableSafetyChecker,
       });
