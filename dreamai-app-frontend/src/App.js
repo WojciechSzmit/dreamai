@@ -11,7 +11,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const res = await axios.post('https://dreamai-79vb.onrender.com/', {
+      const res = await axios.post('api/completion', {
         //const res = await axios.post('http://localhost:5000/api/completion', {  
 
         prompt,
