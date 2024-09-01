@@ -11,7 +11,7 @@ function App() {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:5000/api/completion', {
+      const res = await axios.post('api/completion', {
         prompt,
         enable_safety_checker: enableSafetyChecker,
       });
