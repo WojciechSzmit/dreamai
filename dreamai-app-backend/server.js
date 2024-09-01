@@ -22,7 +22,7 @@ app.use('/api', modelRoutes);
 app.use(express.static(path.join(__dirname, 'dreamai-app-frontend/build')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'dreamai-app-frontend/build', 'index.js'));
+  res.sendFile(path.join(__dirname, 'dreamai-app-frontend', 'index.js'));
 });
 
 
