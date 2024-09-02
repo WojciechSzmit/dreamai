@@ -15,7 +15,7 @@ function App() {
       
       //const res = await axios.post('http://localhost:5000/api/completion', {
 
-const res = await axios.post('https://dreamai-backend.onrender.com', {
+const res = await axios.post('https://dreamai-backend.onrender.com/api/completion', {
 
         prompt,
         enable_safety_checker: enableSafetyChecker,
