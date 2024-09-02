@@ -12,17 +12,11 @@ function App() {
     e.preventDefault();
 
     try {
-<<<<<<< HEAD
       
       const res = await axios.post('https://dreamai-79vb.onrender.com/api/completion', {
 
 
 
-=======
-      const res = await axios.post('http://localhost:5000/api/completion', {
-      //  const res = await axios.post('https://dreamai-79vb.onrender.com/api/completion', {
-        
->>>>>>> 80bee5ffd62e4f6eb9935407ea5ea1ae06ad329a
         prompt,
         enable_safety_checker: enableSafetyChecker,
       });
