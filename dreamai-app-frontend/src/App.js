@@ -13,7 +13,7 @@ function App() {
 
     try {
       
-      const res = await axios.post('https://dreamai-79vb.onrender.com', {
+      const res = await axios.post('https://dreamai-79vb.onrender.com/api/completion', {
 
 
 
