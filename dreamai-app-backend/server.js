@@ -20,11 +20,11 @@ app.use('/api', modelRoutes);
 
 
 
-/* app.use(express.static(path.join(__dirname, 'dreamai-app-frontend/build')));
+app.use(express.static(path.join(__dirname, 'dreamai-app-frontend/build')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'buildPath', 'index.html'));
-}); */
+}); 
 
 
 app.listen(PORT, () => {
